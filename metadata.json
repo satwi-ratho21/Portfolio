@@ -1,0 +1,6 @@
+{
+  "name": "Satwi Portfolio",
+  "description": "Interactive, highly polished developer portfolio and innovation dashboard for Satwi, featuring AI engineering projects, IoT systems, custom hardware telemetry, and experience roadmap.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
