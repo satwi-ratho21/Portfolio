@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { Project, TimelineItem, SkillItem, StatItem, Achievement, Certification } from './types';
 
 export const portfolioOwner = {
@@ -170,7 +165,7 @@ export const allProjects: Project[] = [
 
 export const skills: SkillItem[] = [
   // AI & ML (AI-Native & Vibe Coding Core)
-  { id: "s1", name: "Google Gemini API & SDKs", category: "ai-ml", color: "from-[#00f0ff] to-cyan-500" },
+  { id: "s1", name: "Multimodal LLM APIs & SDKs", category: "ai-ml", color: "from-[#00f0ff] to-cyan-500" },
   { id: "s2", name: "Prompt Engineering & AI Agents", category: "ai-ml", color: "from-purple-400 to-indigo-500" },
   { id: "s3", name: "LLM Orchestration & GenAI Pipelines", category: "ai-ml", color: "from-pink-400 to-rose-500" },
   { id: "s4", name: "Computer Vision (OpenCV & MediaPipe)", category: "ai-ml", color: "from-blue-500 to-purple-500" },
@@ -203,7 +198,7 @@ export const skills: SkillItem[] = [
 
   // Tools & Platforms
   { id: "s25", name: "Cursor & AI Coding Assistants", category: "tools", color: "from-pink-400 to-rose-500" },
-  { id: "s26", name: "Google AI Studio", category: "tools", color: "from-[#00f0ff] to-cyan-600" },
+  { id: "s26", name: "VS Code & Cloud Workspaces", category: "tools", color: "from-[#00f0ff] to-cyan-600" },
   { id: "s27", name: "Git & GitHub Version Control", category: "tools", color: "from-orange-600 to-red-500" },
   { id: "s28", name: "Figma & UI/UX Prototyping", category: "tools", color: "from-purple-400 to-pink-500" },
   { id: "s29", name: "Vercel & Cloud Deployment", category: "tools", color: "from-slate-800 to-black" },

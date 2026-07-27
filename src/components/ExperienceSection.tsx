@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Calendar, Briefcase, Trophy, Cpu, BookOpen } from 'lucide-react';

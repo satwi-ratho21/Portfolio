@@ -1,0 +1,17 @@
+{
+  "name": "Satwi Portfolio",
+  "short_name": "Satwi",
+  "description": "Official portfolio of Satwi, an AI Engineer, Embedded Systems Developer, Full Stack Developer, and Hackathon Winner.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030014",
+  "theme_color": "#030014",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

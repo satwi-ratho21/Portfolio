@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Github, Linkedin, Terminal, ChevronRight, Map, Globe, ShieldAlert } from 'lucide-react';

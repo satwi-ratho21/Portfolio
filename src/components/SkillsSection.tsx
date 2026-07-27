@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Cpu, Code, BrainCircuit, Terminal, Laptop } from 'lucide-react';
@@ -25,7 +20,7 @@ export default function SkillsSection() {
   const getProficiency = (name: string): number => {
     const lower = name.toLowerCase();
     if (lower.includes('python')) return 95;
-    if (lower.includes('gemini')) return 94;
+    if (lower.includes('multimodal') || lower.includes('llm')) return 94;
     if (lower.includes('prompt') || lower.includes('agent')) return 93;
     if (lower.includes('llm') || lower.includes('orchestration')) return 91;
     if (lower.includes('typescript')) return 90;

@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React from 'react';
 import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { portfolioOwner } from '../data';

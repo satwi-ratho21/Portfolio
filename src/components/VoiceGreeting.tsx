@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Volume2, VolumeX, Sparkles, X, ShieldAlert } from 'lucide-react';
@@ -107,7 +102,9 @@ export default function VoiceGreeting() {
     };
 
     utterance.onerror = (e) => {
-      console.warn("Speech synthesis error:", e);
+      if (e.error !== 'interrupted' && e.error !== 'canceled') {
+        // handle unexpected voice error quietly
+      }
       setIsPlaying(false);
       isPlayingRef.current = false;
       if (resumeIntervalRef.current) {
