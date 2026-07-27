@@ -139,7 +139,7 @@ export const featuredProjects: Project[] = [
     tags: ["AI/ML", "Web Platform", "Safety Tech", "Dashboard"],
     category: "ai",
     githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    demoUrl: "https://safety-ecosystem.vercel.app/",
     highlights: [
       "Intelligent text processing & community report extraction",
       "Guardian alert monitoring and notification logs",
