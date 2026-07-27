@@ -174,41 +174,41 @@ const satwi = {
           </div>
 
           {/* Column 2: Satwi Portrait + Globe (Col span 4) */}
-          <div className="lg:col-span-4 flex flex-col items-center justify-center relative min-h-[420px] sm:min-h-[540px] lg:min-h-[560px]">
-            {/* Spinning Holographic Globe background */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 scale-90 sm:scale-120 lg:scale-130">
-              {/* Outer Purple orbit ring */}
-              <div className="absolute w-[340px] h-[340px] rounded-full border border-dashed border-purple-500/20 animate-orbit" />
-              
-              {/* Glowing Purple Ring around her waist */}
-              <div className="absolute w-[290px] h-[290px] rounded-full border-2 border-purple-500/40 shadow-[0_0_30px_rgba(168,85,247,0.3),inset_0_0_20px_rgba(168,85,247,0.1)] animate-orbit-reverse" />
-              
-              {/* Holographic Wireframe Globe circles */}
-              <div className="absolute w-[260px] h-[260px] rounded-full border border-cyan-500/10 flex items-center justify-center">
-                {/* Horizontal Grid */}
-                <div className="absolute w-full h-[80px] rounded-full border border-cyan-500/10 transform rotate-12" />
-                {/* Vertical Grid */}
-                <div className="absolute h-full w-[80px] rounded-full border border-cyan-500/10 transform rotate-45" />
-                {/* Spinning globe node sparks */}
-                <div className="absolute w-1.5 h-1.5 rounded-full bg-[#00f0ff] animate-ping" style={{ top: '15%', left: '30%' }} />
-                <div className="absolute w-1.5 h-1.5 rounded-full bg-[#00f0ff] animate-ping" style={{ bottom: '25%', right: '20%' }} />
-                <div className="absolute w-1.5 h-1.5 rounded-full bg-purple-400" style={{ top: '60%', left: '20%' }} />
-              </div>
-              
-              {/* Globe Icon overlay for extra cyber texture */}
-              <div className="absolute w-[220px] h-[220px] opacity-[0.08] text-cyan-400">
-                <Globe className="w-full h-full animate-pulse-slow" strokeWidth={0.5} />
-              </div>
-            </div>
-
-            {/* Satwi Portrait Image with referrerPolicy */}
+          <div className="lg:col-span-4 flex flex-col items-center justify-center relative my-4 lg:my-0 min-h-[380px] sm:min-h-[480px] lg:min-h-[520px]">
+            {/* Satwi Portrait Image with proportional glowing globe background */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ type: 'spring', stiffness: 80, damping: 20 }}
-              className="relative z-10 w-full max-w-[320px] sm:max-w-[390px] lg:max-w-[430px] xl:max-w-[460px] mx-auto select-none overflow-visible"
+              className="relative z-10 w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[420px] xl:max-w-[450px] mx-auto select-none overflow-visible"
               id="hero-portrait-container"
             >
+              {/* Spinning Holographic Globe background locked relative to portrait aspect ratio */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                {/* Outer Purple orbit ring */}
+                <div className="absolute w-[118%] h-[118%] max-w-[500px] max-h-[500px] aspect-square rounded-full border border-dashed border-purple-500/25 animate-orbit" />
+                
+                {/* Glowing Purple Ring around waist */}
+                <div className="absolute w-[98%] h-[98%] max-w-[420px] max-h-[420px] aspect-square rounded-full border-2 border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.35),inset_0_0_20px_rgba(168,85,247,0.15)] animate-orbit-reverse" />
+                
+                {/* Holographic Wireframe Globe circles */}
+                <div className="absolute w-[84%] h-[84%] max-w-[360px] max-h-[360px] aspect-square rounded-full border border-cyan-500/20 flex items-center justify-center">
+                  {/* Horizontal Grid */}
+                  <div className="absolute w-full h-[32%] rounded-full border border-cyan-500/15 transform rotate-12" />
+                  {/* Vertical Grid */}
+                  <div className="absolute h-full w-[32%] rounded-full border border-cyan-500/15 transform rotate-45" />
+                  {/* Spinning globe node sparks */}
+                  <div className="absolute w-1.5 h-1.5 rounded-full bg-[#00f0ff] animate-ping" style={{ top: '15%', left: '30%' }} />
+                  <div className="absolute w-1.5 h-1.5 rounded-full bg-[#00f0ff] animate-ping" style={{ bottom: '25%', right: '20%' }} />
+                  <div className="absolute w-1.5 h-1.5 rounded-full bg-purple-400" style={{ top: '60%', left: '20%' }} />
+                </div>
+                
+                {/* Globe Icon overlay for extra cyber texture */}
+                <div className="absolute w-[72%] h-[72%] max-w-[300px] max-h-[300px] aspect-square opacity-[0.09] text-cyan-400">
+                  <Globe className="w-full h-full animate-pulse-slow" strokeWidth={0.5} />
+                </div>
+              </div>
+
               {/* Ambient radial shadow behind portrait */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#030014] via-transparent to-transparent z-20 pointer-events-none" />
               

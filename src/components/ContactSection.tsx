@@ -33,12 +33,19 @@ export default function ContactSection() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Simulate database write
+    const subject = encodeURIComponent(formData.subject || `Portfolio Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+
+    // Open mail client addressed directly to portfolioOwner.email (satwi033@gmail.com)
+    window.location.href = `mailto:${portfolioOwner.email}?subject=${subject}&body=${body}`;
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1500);
+    }, 1000);
   };
 
   return (
@@ -93,9 +100,9 @@ export default function ContactSection() {
             </div>
 
             {/* Quote of Innovation */}
-            <div className="p-4 rounded-xl bg-[#0a081e]/30 border border-purple-500/5 text-xs text-gray-400 font-mono italic">
-              <span className="text-[#00f0ff] font-bold block mb-1">SYSTEM_NOTICE:</span>
-              "Comms packets transit through encrypted channels and trigger immediate push notifications to my local development terminal."
+            <div className="p-4 rounded-xl bg-[#0a081e]/30 border border-purple-500/5 text-xs text-gray-400 font-mono">
+              <span className="text-[#00f0ff] font-bold block mb-1">DIRECT_EMAIL_LINK:</span>
+              Form submissions automatically launch the user's email client addressed directly to <a href={`mailto:${portfolioOwner.email}`} className="text-cyan-400 underline font-bold">{portfolioOwner.email}</a>.
             </div>
           </div>
 

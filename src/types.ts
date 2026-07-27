@@ -13,6 +13,7 @@ export interface Project {
   githubUrl?: string;
   longDescription?: string;
   category: 'ai' | 'iot' | 'web' | 'hardware';
+  highlights?: string[];
 }
 
 export interface TimelineItem {

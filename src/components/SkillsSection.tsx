@@ -21,31 +21,27 @@ export default function SkillsSection() {
 
   const filteredSkills = skills.filter((skill) => skill.category === activeCategory);
 
-  // Generate deterministic proficiency values for demonstration metrics (since it's a portfolio)
+  // Generate proficiency values matching skills
   const getProficiency = (name: string): number => {
-    switch (name) {
-      case 'Python': return 92;
-      case 'TypeScript': return 88;
-      case 'C / C++': return 85;
-      case 'JavaScript': return 90;
-      case 'React': return 90;
-      case 'Next.js': return 82;
-      case 'Node.js': return 85;
-      case 'Tailwind CSS': return 95;
-      case 'Arduino': return 94;
-      case 'ESP32 / ESP8266': return 92;
-      case 'Sensors & Actuators': return 90;
-      case 'PCB Design & KiCad': return 80;
-      case 'TensorFlow': return 85;
-      case 'Computer Vision (OpenCV)': return 88;
-      case 'Edge Impulse (TinyML)': return 86;
-      case 'Data Science & Pandas': return 80;
-      case 'Git & GitHub': return 92;
-      case 'Firebase': return 88;
-      case 'Figma': return 80;
-      case 'Docker': return 75;
-      default: return 85;
-    }
+    const lower = name.toLowerCase();
+    if (lower.includes('python')) return 95;
+    if (lower.includes('gemini')) return 94;
+    if (lower.includes('prompt') || lower.includes('agent')) return 93;
+    if (lower.includes('llm') || lower.includes('orchestration')) return 91;
+    if (lower.includes('typescript')) return 90;
+    if (lower.includes('react')) return 92;
+    if (lower.includes('next.js')) return 88;
+    if (lower.includes('node.js')) return 89;
+    if (lower.includes('tailwind')) return 95;
+    if (lower.includes('firebase')) return 90;
+    if (lower.includes('vision') || lower.includes('opencv')) return 88;
+    if (lower.includes('arduino') || lower.includes('microcontroller')) return 94;
+    if (lower.includes('esp32')) return 92;
+    if (lower.includes('cursor')) return 96;
+    if (lower.includes('c / c++') || lower.includes('c++')) return 86;
+    if (lower.includes('javascript')) return 91;
+    if (lower.includes('pcb') || lower.includes('kicad')) return 85;
+    return 88;
   };
 
   return (
@@ -131,9 +127,9 @@ export default function SkillsSection() {
         </div>
 
         {/* Core Methodology Highlight */}
-        <div className="max-w-3xl mx-auto mt-10 p-5 rounded-xl bg-[#0a081e]/30 border border-purple-500/5 text-center">
-          <p className="text-xs text-gray-400 font-sans leading-relaxed">
-            <strong className="text-white">Continuous Evolution:</strong> I consistently update my core stack, keeping pace with micro-architecture modifications, framework optimizations, and deep learning neural-network pruning mechanisms.
+        <div className="max-w-3xl mx-auto mt-10 p-5 rounded-xl bg-[#0a081e]/30 border border-purple-500/10 text-center">
+          <p className="text-xs text-gray-300 font-sans leading-relaxed">
+            <strong className="text-[#00f0ff]">AI-Native & Vibe-Coding Workflow:</strong> Combining rapid full-stack prototyping, generative AI API orchestration, and agentic coding workflows with clean architecture and robust hardware-software integration.
           </p>
         </div>
 

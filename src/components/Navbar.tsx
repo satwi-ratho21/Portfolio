@@ -21,7 +21,6 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
     { id: 'achievements', label: 'Achievements' },
     { id: 'certifications', label: 'Certifications' },
@@ -47,36 +46,27 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
     }
   };
 
-  const simulateDownload = () => {
-    // Generate a temporary resume content file and trigger download
-    const resumeText = `
-PORTFOLIO RESUME - SATWI
-AI Engineer | Embedded Systems Developer | Full Stack Developer
-Email: ${portfolioOwner.email}
-
-CORE EXPERTISE:
-- AI & Machine Learning: TensorFlow, OpenCV, Edge Impulse, Computer Vision, Dataset Curation
-- Embedded Systems & Hardware: ESP32, Arduino, Custom Sensors, Actuators, KiCad PCB Layout
-- Full Stack Web: React, Next.js, Node.js, Express, Tailwind CSS, TypeScript, Firebase, SQL
-
-HIGHLIGHTED PROJECTS:
-1. Human Trafficking Prevention System: AI-driven Computer Vision platform for detection and alerts.
-2. Maternal Health Monitoring System: Wearable IoT system with ESP32 vital sensors & real-time emergency alert dispatch.
-3. Smart Automation System: Industrial IoT automation platform with sensor logging and relay control.
-
-ACHIEVEMENTS:
-- 1st Place Winner, National Smart India Hackathon (SIH 2023)
-- Winner, IoT Innovation Challenge
-- Outstanding Young Innovator Award, State Tech Council
-    `;
-    const blob = new Blob([resumeText], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = "Satwi_Resume.txt";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownloadResume = async () => {
+    try {
+      const resumePath = portfolioOwner.resumeUrl || '/resume.png';
+      const response = await fetch(resumePath);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = "Satwi_Resume.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch {
+      const link = document.createElement('a');
+      link.href = portfolioOwner.resumeUrl || '/resume.png';
+      link.download = "Satwi_Resume.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
@@ -127,7 +117,7 @@ ACHIEVEMENTS:
           {/* Download Resume Button (Desktop) */}
           <div className="hidden md:block">
             <button
-              onClick={simulateDownload}
+              onClick={handleDownloadResume}
               id="btn-download-resume-desktop"
               className="relative group overflow-hidden px-4 py-2.5 rounded-lg border border-transparent flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-white transition-all duration-300 cursor-pointer"
             >
@@ -186,7 +176,7 @@ ACHIEVEMENTS:
               
               <div className="pt-4 px-4 flex justify-center">
                 <button
-                  onClick={simulateDownload}
+                  onClick={handleDownloadResume}
                   id="btn-download-resume-mobile"
                   className="w-full relative group overflow-hidden px-4 py-3 rounded-lg border border-transparent flex items-center justify-center space-x-2 text-xs font-semibold uppercase tracking-wider text-white transition-all duration-300 cursor-pointer"
                 >

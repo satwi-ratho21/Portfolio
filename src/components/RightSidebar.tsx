@@ -7,19 +7,13 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { 
   Trophy, 
-  Rocket, 
-  Code, 
-  Heart, 
   Cpu, 
   Network, 
   Layers, 
   Figma, 
-  BrainCircuit,
-  MapPin,
-  Calendar,
-  Briefcase
+  BrainCircuit
 } from 'lucide-react';
-import { stats, timeline } from '../data';
+import { stats } from '../data';
 import LucideIcon from './LucideIcon';
 
 export default function RightSidebar() {
@@ -148,55 +142,6 @@ export default function RightSidebar() {
               </div>
               <p className="text-[10px] font-medium text-gray-400 group-hover:text-gray-300">
                 {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Panel 3: Experience Journey */}
-      <motion.div 
-        variants={itemVariants}
-        id="sidebar-panel-experience-journey"
-        className="relative p-5 rounded-xl glass-panel border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 shadow-xl"
-      >
-        <div className="absolute -top-10 -right-10 w-24 h-24 bg-cyan-500/5 rounded-full blur-xl" />
-        
-        <h4 className="text-[10px] font-display font-bold tracking-widest text-purple-400 uppercase mb-4">
-          Experience Journey
-        </h4>
-
-        {/* Timeline */}
-        <div className="relative pl-3 space-y-4">
-          {/* Vertical center Line */}
-          <div className="absolute left-[3px] top-1.5 bottom-1.5 w-[1.5px] bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-500/30" />
-
-          {timeline.map((item, idx) => (
-            <div 
-              key={item.id}
-              id={`timeline-card-${item.id}`}
-              className="relative pl-5 group"
-            >
-              {/* Timeline dot with glowing effect */}
-              <div className="absolute -left-[16.5px] top-[4px] flex items-center justify-center">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400 group-hover:bg-pink-500 transition-colors"></span>
-                </span>
-              </div>
-
-              {/* Header */}
-              <div className="flex flex-col mb-1">
-                <span className="text-[10px] font-mono text-[#00f0ff] tracking-wider">
-                  {item.year}
-                </span>
-                <span className="text-xs font-bold text-white group-hover:text-[#00f0ff] transition-colors">
-                  {item.role}
-                </span>
-              </div>
-              
-              <p className="text-[11px] text-gray-400 group-hover:text-gray-300 leading-relaxed">
-                {item.description}
               </p>
             </div>
           ))}

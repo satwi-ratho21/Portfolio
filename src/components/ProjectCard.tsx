@@ -184,22 +184,34 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                       Key Capabilities & Technologies
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300">
-                      <div className="flex items-center space-x-2">
-                        <Check className="w-4 h-4 text-[#00f0ff] flex-shrink-0" />
-                        <span>High-frequency data streaming</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Check className="w-4 h-4 text-[#00f0ff] flex-shrink-0" />
-                        <span>Low-power deep-sleep ESP32 configuration</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Check className="w-4 h-4 text-[#00f0ff] flex-shrink-0" />
-                        <span>Edge AI inference pipeline</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Check className="w-4 h-4 text-[#00f0ff] flex-shrink-0" />
-                        <span>Real-time dashboard visualization</span>
-                      </div>
+                      {(project.highlights && project.highlights.length > 0
+                        ? project.highlights
+                        : project.category === 'ai'
+                        ? [
+                            "Edge AI inference pipeline",
+                            "Model training & evaluation",
+                            "Cognitive computing modules",
+                            "Data processing pipelines"
+                          ]
+                        : project.category === 'hardware' || project.category === 'iot'
+                        ? [
+                            "Low-power sensor integration",
+                            "Embedded firmware architectures",
+                            "Real-time sensor telemetry",
+                            "Hardware prototype validation"
+                          ]
+                        : [
+                            "Modern full-stack architecture",
+                            "Secure user data authentication",
+                            "Interactive high-performance UI",
+                            "Real-time persistent state"
+                          ]
+                      ).map((highlight, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <Check className="w-4 h-4 text-[#00f0ff] flex-shrink-0" />
+                          <span>{highlight}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 

@@ -8,7 +8,6 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
-import FullProjectsSection from './components/FullProjectsSection';
 import ExperienceSection from './components/ExperienceSection';
 import AchievementsSection from './components/AchievementsSection';
 import ContactSection from './components/ContactSection';
@@ -20,7 +19,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'achievements', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 160; // Offset for navbar and margin triggers
 
       for (const section of sections) {
@@ -61,12 +60,11 @@ export default function App() {
       {/* Main Sections */}
       <main className="relative">
         <HeroSection 
-          onExploreProjects={() => handleScrollToSection('projects')} 
+          onExploreProjects={() => handleScrollToSection('skills')} 
           onExploreWork={() => handleScrollToSection('about')} 
         />
         <AboutSection />
         <SkillsSection />
-        <FullProjectsSection />
         <ExperienceSection />
         <AchievementsSection />
         <ContactSection />
